@@ -18,7 +18,7 @@
 <body id="body">
     <div class="container">
         <div class="box">
-            <div class="flip-card">
+            <div class="flip-card" id="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-back">
                         <img src="./imagens/Convite - Card Back.png" alt="Fundo">
@@ -35,9 +35,22 @@
         <input type="checkbox" class="playpause-icone" id="playpause-check">
         <label for="playpause-check"></label>
     </div>
-    
-</body>
 
-<script src="./js/music-player.js"></script>
+    <!-- Adicione o script JavaScript abaixo do conteúdo da página -->
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var musica = document.getElementById('musica');
+            var flipCard = document.getElementById('flip-card');
+
+            flipCard.addEventListener('mouseover', function() {
+                musica.play();
+            });
+        });
+    </script>
+
+    <!-- Adicionando caminho da música no repositório -->
+    <audio id="musica" src="./som/02 Opening (part 2).mp3"></audio>
+    <!-- Fim da tag audio -->
+</body>
 
 </html>
