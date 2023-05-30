@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/music-player.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/music-player.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Convite</title>
-</head>
+  </head>
 
-<body id="body">
+  <body id="body">
     <div class="container">
-        <div class="box">
-            <div class="flip-card" id="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-back">
-                        <img src="./imagens/Convite - Card Back.png" alt="Fundo">
-                    </div>
-                    <div class="flip-card-front">
-                        <img src="./imagens/Convite - Card Front.png" alt="Fundo">
-                    </div>
-                </div>
+      <div class="box">
+        <div class="flip-card" id="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-back">
+              <img src="./imagens/Convite - Card Back.png" alt="Fundo" />
             </div>
+            <div class="flip-card-front">
+              <img src="./imagens/Convite - Card Front.png" alt="Fundo" />
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="botao-futuante">
-        <input type="checkbox" class="playpause-icone" id="playpause-check">
-        <label for="playpause-check"></label>
+      <input type="checkbox" class="playpause-icone" id="playpause-check" />
+      <label for="playpause-check"></label>
     </div>
 
     <!-- Adicione o script JavaScript abaixo do conteúdo da página -->
     <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            var musica = document.getElementById('musica');
-            var flipCard = document.getElementById('flip-card');
+      window.addEventListener('DOMContentLoaded', function () {
+        var musica = document.getElementById('musica');
+        var flipCard = document.getElementById('flip-card');
+        var playPauseCheckbox = document.getElementById('playpause-check');
 
-            flipCard.addEventListener('mouseover', function() {
-                musica.play();
-            });
+        flipCard.addEventListener('mouseover', function () {
+          if (musica.paused) {
+            musica.play();
+          } else {
+            musica.pause();
+          }
         });
+
+        playPauseCheckbox.addEventListener('click', function () {
+          if (musica.paused) {
+            musica.play();
+          } else {
+            musica.pause();
+          }
+        });
+      });
     </script>
 
     <!-- Adicionando caminho da música no repositório -->
     <audio id="musica" src="./som/02 Opening (part 2).mp3"></audio>
     <!-- Fim da tag audio -->
-</body>
-
+  </body>
 </html>
